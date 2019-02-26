@@ -12,3 +12,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.pointer {
+  cursor: pointer
+}
+
+.row {
+  margin-left: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.list-group-item-purple {
+  color: white;
+  background-color: #a979d1;
+}
+
+.list-group-item-green {
+  background: #53d192;
+  color: #fff;
+}
+
+.purple-color, .text-primary {
+  color: #a979d1;
+}
+
+.green-color, .text-success {
+  color: #53d192;
+}
+
+.fa {
+  position: relative;
+  top: calc(50% - 20px);
+}
+
+
+a {
+    color: #8BC34A;
+}

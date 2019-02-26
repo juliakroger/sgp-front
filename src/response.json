@@ -1,0 +1,213 @@
+{
+  "lastUpdate": "2019-02-26T10:20:19.920-03:00",
+  "graf_questions_difficulty": [
+    {
+      "porcentagem": 35.653650254668925,
+      "total": 420,
+      "nome": "Fácil"
+    },
+    {
+      "porcentagem": 46.349745331069606,
+      "total": 546,
+      "nome": "Médio"
+    },
+    {
+      "porcentagem": 17.741935483870968,
+      "total": 209,
+      "nome": "Difícil"
+    },
+    {
+      "porcentagem": 0.2546689303904924,
+      "total": 3,
+      "nome": "ENADE"
+    }
+  ],
+  "total_questions": 1178,
+  "objective_questions": 799,
+  "graf_quant_questoes": {
+    "total_criadas": 1178,
+    "total_usadas": 469
+  },
+  "total_tests": 15505,
+  "graf_tests_by_month": [
+    {
+      "total": 23,
+      "data": "2/2018"
+    },
+    {
+      "total": 14,
+      "data": "4/2018"
+    },
+    {
+      "total": 3,
+      "data": "5/2018"
+    },
+    {
+      "total": 5,
+      "data": "6/2018"
+    },
+    {
+      "total": 49,
+      "data": "9/2018"
+    },
+    {
+      "total": 41,
+      "data": "10/2018"
+    },
+    {
+      "total": 109,
+      "data": "11/2018"
+    },
+    {
+      "total": 21,
+      "data": "12/2018"
+    },
+    {
+      "total": 19,
+      "data": "1/2019"
+    },
+    {
+      "total": 5,
+      "data": "2/2019"
+    }
+  ],
+  "graf_processed_tests": {
+    "processed": 3367,
+    "not_processed": 12138
+  },
+  "questions": [
+    {
+      "total": 1,
+      "data": "2/2018"
+    },
+    {
+      "total": 1,
+      "data": "3/2018"
+    },
+    {
+      "total": 4,
+      "data": "4/2018"
+    },
+    {
+      "total": 1,
+      "data": "5/2018"
+    },
+    {
+      "total": 14,
+      "data": "6/2018"
+    },
+    {
+      "total": 1,
+      "data": "9/2018"
+    },
+    {
+      "total": 7,
+      "data": "10/2018"
+    },
+    {
+      "total": 31,
+      "data": "11/2018"
+    },
+    {
+      "total": 29,
+      "data": "12/2018"
+    },
+    {
+      "total": 14,
+      "data": "1/2019"
+    },
+    {
+      "total": 16,
+      "data": "2/2019"
+    }
+  ],
+  "discursive_questions": 363,
+  "graf_tests_not_nominal_by_month": [
+    {
+      "total": 21,
+      "data": "3/2018"
+    },
+    {
+      "total": 5,
+      "data": "4/2018"
+    },
+    {
+      "total": 2,
+      "data": "6/2018"
+    },
+    {
+      "total": 14,
+      "data": "8/2018"
+    },
+    {
+      "total": 22,
+      "data": "9/2018"
+    },
+    {
+      "total": 62,
+      "data": "10/2018"
+    },
+    {
+      "total": 31,
+      "data": "12/2018"
+    },
+    {
+      "total": 4,
+      "data": "1/2019"
+    },
+    {
+      "total": 1,
+      "data": "2/2019"
+    }
+  ],
+  "graf_tests_nominal_by_month": [
+    {
+      "total": 60,
+      "data": "2/2018"
+    },
+    {
+      "total": 549,
+      "data": "3/2018"
+    },
+    {
+      "total": 404,
+      "data": "4/2018"
+    },
+    {
+      "total": 226,
+      "data": "5/2018"
+    },
+    {
+      "total": 141,
+      "data": "6/2018"
+    },
+    {
+      "total": 114,
+      "data": "8/2018"
+    },
+    {
+      "total": 948,
+      "data": "9/2018"
+    },
+    {
+      "total": 646,
+      "data": "10/2018"
+    },
+    {
+      "total": 131,
+      "data": "11/2018"
+    },
+    {
+      "total": 158,
+      "data": "12/2018"
+    },
+    {
+      "total": 91,
+      "data": "1/2019"
+    },
+    {
+      "total": 108,
+      "data": "2/2019"
+    }
+  ]
+}

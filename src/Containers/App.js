@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Sidebar from '../Components/Sidebar';
 import Navbar from '../Components/Navbar';
-
+import Wrapper from './Wrapper';
 class App extends Component {
   render() {
     return (
@@ -9,7 +9,7 @@ class App extends Component {
           <Sidebar/>
           <div className="main">
                 <Navbar />
-                <p>content</p>
+                <Wrapper />
           </div>
       </div>
     );
