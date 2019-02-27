@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import data from '../response.json';
-import Charts from '../Components/Charts/HomeCharts/TotalQuestions';
-
+import TotalQuestionsChart from '../Components/Charts/HomeCharts/TotalQuestions';
+import QuestionsDifficultyChart from '../Components/Charts/HomeCharts/QuestionsDifficulty';
 
 
 
@@ -60,8 +60,8 @@ class Wrapper extends Component {
                     </div>
                 </div>
             </div>
-
-            <Charts data={data.graf_quant_questoes} />
+            <TotalQuestionsChart data={data.graf_quant_questoes} />
+                <QuestionsDifficultyChart />
             </div>
         );
     };
