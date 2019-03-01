@@ -1,0 +1,183 @@
+.LoginScreen {
+    background: url("https://cdn.starlinetecnologia.com.br/images/login-background.jpg") no-repeat center;
+    background-size: cover;
+    height: 1217px;
+}
+
+header {
+    background: url("https://cdn.starlinetecnologia.com.br/images/logo-prova-facil-branca_2.png") no-repeat;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto;
+    background-size: 200px;
+    background-position-x: 8px;
+    background-position-y: 8px;
+    padding-top: 21px;
+    padding-left: 21px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    magin-top: 10px;
+    max-width: 300px;
+    max-height: 120px;
+    margin-left: -24px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.login-form-container {
+    margin-top: 10%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex: 3;
+    flex-direction: column;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-form input:not([type="checkbox"]) {
+    margin-top: 8px;
+    background-color: #bcbdbf;
+    color: #ffffff;
+    height: 45px;
+    width: 300px;
+    border: none;
+    border: 1px solid #00b63f;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.display-flex {
+    display: flex;
+}
+
+
+.sgp-checkbox {
+    margin-top: 8px;
+    display: block;
+    position: relative;
+    padding-left: 21px;
+    margin-bottom: 0;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.sgp-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+    border: 1px solid #00b63f;
+}
+
+.login-form label {
+    color: #ffffff;
+}
+
+a.forgot-password {
+    color: #00b63f;
+}
+
+
+.login-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 13px;
+    background-color: transparent;
+    border: 1px solid #00b63f;
+    height: 50px;
+    color: #ffffff;
+    width: 200px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 1.5s ease-in-out;
+    cursor: pointer;
+}
+
+
+
+.login-btn:hover{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    position: relative;
+    margin-right: -40px;
+}
+
+.login-footer {
+    margin-top: 30%;
+    color: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 2;
+    flex-direction: column;
+}
+
+.login-footer-container {
+    width: 65%;
+    min-width: 300px;
+}
+
+.login-footer h4 {
+    margin: 0 auto 0 0;
+    font-variant-caps: all-small-caps;
+}
+
+.login-footer-header .progress {
+    margin-top: 13px;
+    height: 2px;
+}
+
+.progress {
+    box-shadow: none;
+    background: #f0f2f7;
+    border-radius: 0px;
+}
+
+.login-footer-header .progress-bar {
+    background-color: #00b63f;
+    width: 20%;
+}
+
+.login-footer-images {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top:20px;
+}
+
+.login-footer-images a {
+    flex: 1px;
+    padding-right: 21px;
+    margin-bottom: 13px;
+    min-height: 45px;
+    min-width: 140px;
+    max-height: 45px;
+    max-width: 140px;
+    cursor: pointer;
+    color: #ffffff;
+}
