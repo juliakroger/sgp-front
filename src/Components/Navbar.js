@@ -6,10 +6,10 @@ class Navebar extends Component {
         return (
             <div className="navbar navbar-light bg-light">
                 <div>
-                    <a className="small"><i className="fa fa-dedent nav-link"/></a>
-                    <a className="small"><i className="fa fa-home nav-link"/></a>
-                    <a className="small"><i className="fa fa-tasks nav-link"/></a>
-                    <a className="small"><i className="fa fa-bell-o nav-link "/></a>
+                    <i className="fa fa-dedent nav-link pointer"/>
+                    <i className="fa fa-home nav-link pointer"/>
+                    <i className="fa fa-tasks nav-link pointer"/>
+                    <i className="fa fa-bell-o nav-link pointer"/>
                 </div>
                 <form className="form-inline">
                     <p className="small mr-md-1 mt-md-3">Unidades:</p>
@@ -18,7 +18,7 @@ class Navebar extends Component {
                         <option value="2">FIO</option>
                         <option value="3">ESAMEC</option>
                     </select>
-                    <p className="small ml-md-4  mt-md-3">suporte.demo  <i className="fa fa-angle-down"></i></p>
+                    <p className="small ml-md-4  mt-md-3 pointer">suporte.demo <i className="fa fa-angle-down"></i></p>
                 </form>
             </div>
 

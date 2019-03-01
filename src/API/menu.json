@@ -1,0 +1,366 @@
+{
+
+  "processing-menu": {
+
+    "active": true,
+
+    "pages": {
+
+      "all-process-submenu": {
+
+        "active": true
+
+      },
+
+      "image-download-submenu": {
+
+        "active": true
+
+      },
+
+      "audit-submenu": {
+
+        "active": true
+
+      },
+
+      "search-barcode-submenu": {
+
+        "active": true
+
+      },
+
+      "audit-discursive-submenu": {
+
+        "active": true
+
+      }
+
+    }
+
+  },
+
+  "config-menu": {
+
+    "active": true,
+
+    "pages": {
+
+      "test-type-submenu": {
+
+        "active": true
+
+      },
+
+      "content-candidate-submenu": {
+
+        "active": true
+
+      },
+
+      "rule-submenu": {
+
+        "active": false
+
+      },
+
+      "instruction-submenu": {
+
+        "active": true
+
+      },
+
+      "integration-submenu": {
+
+        "active": true
+
+      },
+
+      "certificate-list-submenu": {
+
+        "active": false
+
+      },
+
+      "manifestation-type-submenu": {
+
+        "active": false
+
+      },
+
+      "content-submenu": {
+
+        "active": true
+
+      },
+
+      "parameter-submenu": {
+
+        "active": false
+
+      },
+
+      "reason-audit-submenu": {
+
+        "active": false
+
+      },
+
+      "user-group-submenu": {
+
+        "active": true
+
+      },
+
+      "candidate-submenu": {
+
+        "active": true
+
+      },
+
+      "import-submenu": {
+
+        "active": true
+
+      },
+
+      "place-submenu": {
+
+        "active": true
+
+      },
+
+      "user-submenu": {
+
+        "active": true
+
+      },
+
+      "diff-level-submenu": {
+
+        "active": false
+
+      },
+
+      "related-attr-submenu": {
+
+        "active": false
+
+      },
+
+      "polarity-submenu": {
+
+        "active": false
+
+      },
+
+      "academic-submenu": {
+
+        "active": true
+
+      },
+
+      "client-group-submenu": {
+
+        "active": true
+
+      }
+
+    }
+
+  },
+
+  "correction-menu": {
+
+    "active": true,
+
+    "pages": {
+
+      "search-questions-submenu": {
+
+        "active": true
+
+      },
+
+      "correct-exam-submenu": {
+
+        "active": true
+
+      },
+
+      "bulletins-generation-submenu": {
+
+        "active": false
+
+      },
+
+      "search-candidate-submenu": {
+
+        "active": true
+
+      },
+
+      "academic-report-submenu": {
+
+        "active": true
+
+      },
+
+      "questionnarie-report-submenu": {
+
+        "active": false
+
+      },
+
+      "appeal-submenu": {
+
+        "active": false
+
+      },
+
+      "generate-bulletin-submenu": {
+
+        "active": false
+
+      },
+
+      "change-score-submenu": {
+
+        "active": false
+
+      },
+
+      "answer-change-submenu": {
+
+        "active": true
+
+      },
+
+      "nullify-questions-submenu": {
+
+        "active": true
+
+      },
+
+      "exam-report-submenu": {
+
+        "active": true
+
+      },
+
+      "batch-change-submenu": {
+
+        "active": true
+
+      }
+
+    }
+
+  },
+
+  "report-menu": {
+
+    "active": true,
+
+    "pages": {
+
+      "category-external-submenu": {
+
+        "active": false
+
+      },
+
+      "category-resultado-submenu": {
+
+        "active": true
+
+      },
+
+      "general-report-einstein": {
+
+        "active": false
+
+      },
+
+      "bi-data-consolidation": {
+
+        "active": false
+
+      }
+
+    }
+
+  },
+
+  "create-menu": {
+
+    "active": true,
+
+    "pages": {
+
+      "lyceum-integration-submenu": {
+
+        "active": false
+
+      },
+
+      "all-schedules-submenu": {
+
+        "active": true
+
+      },
+
+      "my-tasks-submenu": {
+
+        "active": false
+
+      },
+
+      "taleo-integration-submenu": {
+
+        "active": false
+
+      },
+
+      "pending-information-submenu": {
+
+        "active": true
+
+      },
+
+      "schedule-group-submenu": {
+
+        "active": true
+
+      },
+
+      "batch-assessment-submenu": {
+
+        "active": true
+
+      },
+
+      "pending-review-submenu": {
+
+        "active": true
+
+      },
+
+      "question-database-submenu": {
+
+        "active": false
+
+      },
+
+      "test-template-submenu": {
+
+        "active": true
+
+      }
+
+    }
+
+  }
+
+}
+

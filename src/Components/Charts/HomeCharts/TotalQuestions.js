@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
 import {
-    BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
 class TotalQuestions extends Component {
     render() {
-
+        const {total_criadas, total_usadas} = this.props.data;
         return (
-            <div>
-                <p>{this.props.data.total_criadas}</p>
-                <p>{this.props.data.total_usadas}</p>
+            <div className="card bg-light text-center mr-md-2 mt-md-2">
+                <p>Total de Questões</p>
                 <BarChart
-                    width={370}
-                    height={200}
+                    width={300}
+                    height={300}
                     data={[
-                        { name: " Totais de Questões", criadas: 1000, usadas: 2400},
+                        { name: 'provas', criadas: total_criadas, usadas: total_usadas },
+
                     ]}
-                    margin={{top: 5, right: 30, left: 30, bottom: 5,}}>
+                    margin={{top: 10, right: 10, left: 10, bottom: 10}}>
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
+                    <XAxis dataKey="Total de questões" />
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="criadas" fill="#8884d8" />
-                    <Bar dataKey="usadas" fill="#82ca9d" />
+                    <Bar dataKey="criadas" fill="#53D191" />
+                    <Bar dataKey="usadas" fill="#FF8A65" />
                 </BarChart>
             </div>
         );

@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
-import data from '../response.json';
-import TotalQuestionsChart from '../Components/Charts/HomeCharts/TotalQuestions';
-import QuestionsDifficultyChart from '../Components/Charts/HomeCharts/QuestionsDifficulty';
-
-
+import data from '../API/wrapper.json';
+import TotalQuestions from './Charts/HomeCharts/TotalQuestions';
+import TestsByMonth from './Charts/HomeCharts/TestsByMonth';
+import ProcessedQuestions from "./Charts/HomeCharts/ProcessedQuestions";
+import TestsTypes from "./Charts/HomeCharts/TestsTypes";
+import QuestionsDifficulty from './Charts/HomeCharts/QuestionsDifficulty';
+import ProcessedTests from './Charts/HomeCharts/ProcessedTests';
 
 class Wrapper extends Component {
     render() {
@@ -60,8 +62,16 @@ class Wrapper extends Component {
                     </div>
                 </div>
             </div>
-            <TotalQuestionsChart data={data.graf_quant_questoes} />
-                <QuestionsDifficultyChart />
+                <div className="row home-charts">
+                    <TotalQuestions data={data.graf_quant_questoes} />
+                    <ProcessedQuestions data={data.questions}/>
+                    <TestsTypes not_nominal={data.graf_tests_not_nominal_by_month} nominal={data.graf_tests_nominal_by_month}/>
+                    <ProcessedTests data={data.graf_processed_tests} />
+                    <QuestionsDifficulty  data={data.graf_questions_difficulty}/>
+                    <TestsByMonth data={data.graf_tests_by_month}/>
+
+
+                  </div>
             </div>
         );
     };

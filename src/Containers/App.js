@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
-import Sidebar from '../Components/Sidebar';
-import Navbar from '../Components/Navbar';
-import Wrapper from './Wrapper';
+import Home from  './Home';
 class App extends Component {
   render() {
     return (
       <div>
-          <Sidebar/>
-          <div className="main">
-                <Navbar />
-                <Wrapper />
-          </div>
+        <Home />
       </div>
     );
   }
