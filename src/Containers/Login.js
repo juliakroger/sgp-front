@@ -24,7 +24,10 @@ class Login extends Component {
     loginHandler = (event) => {
         console.log(this.state.username, this.state.password)
         Auth.signIn(this.state.username, this.state.password)
-            .then(response => console.log('200', response))
+            .then(response => {
+                console.log('200', response)
+                this.props.history.push("/home");
+            })
             .catch(error => console.log('400', error.message))
     }
 
@@ -50,17 +53,8 @@ class Login extends Component {
                 <div className="login-form">
                     <input className="form-control" placeholder="Usuário" onChange={this.onUsernameChange}/>
                     <input className="form-control" placeholder="Senha" type="password" onChange={this.onPassowordChange}/>
-                    <div className="display-flex">
-                        <label className="sgp-checkbox">
-                            <input name="chksession" value="remember-me" type="checkbox" />
-                                <span className="checkmark"></span>
-                                <span>Permanecer Logado</span>
-                        </label>
-                        <a className="forgot-password ml-md-4 mt-md-2">Esqueci minha senha</a>
-                    </div>
-                    <div className="login-btn" onClick={this.loginHandler}>
-                            <span>Logar</span>
-                    </div>
+
+                    <div className="login-btn" onClick={this.loginHandler}><span>Logar</span></div>
                 </div>
             </section>
 

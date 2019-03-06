@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import data from '../API/menu.json';
+import data from '../../API/menu.json';
 
 class Sidebar extends Component {
     state = {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import data from '../API/wrapper.json';
+import data from '../../API/wrapper.json';
 import TotalQuestions from './Charts/HomeCharts/TotalQuestions';
 import TestsByMonth from './Charts/HomeCharts/TestsByMonth';
 import ProcessedQuestions from "./Charts/HomeCharts/ProcessedQuestions";

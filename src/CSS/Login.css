@@ -62,42 +62,6 @@ img {
     display: flex;
 }
 
-
-.sgp-checkbox {
-    margin-top: 8px;
-    display: block;
-    position: relative;
-    padding-left: 21px;
-    margin-bottom: 0;
-    cursor: pointer;
-    font-size: 13px;
-}
-
-.sgp-checkbox input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.checkmark {
-    position: absolute;
-    top: 2px;
-    left: 0;
-    height: 15px;
-    width: 15px;
-    background-color: transparent;
-    border: 1px solid #00b63f;
-}
-
-.login-form label {
-    color: #ffffff;
-}
-
-a.forgot-password {
-    color: #00b63f;
-}
-
-
 .login-btn {
     display: flex;
     justify-content: center;

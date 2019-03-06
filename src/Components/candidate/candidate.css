@@ -1,0 +1,76 @@
+/*CANDIDATE HEADER*/
+div.candidate-header {
+    text-align: center;
+    padding: 30px 0;
+    color: #fff;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: #272262;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.login-header, .candidate-info, .logout-container {
+    flex: 1;
+}
+
+.login-header img {
+    max-width: 250px;
+    max-height: 200px;
+}
+
+.logout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-icon {
+    color: #00B63F;
+    margin-right: 5px;
+}
+/*CANDIDATE DASHBOARD*/
+
+.candidate-dashboard {
+    flex: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 34px 89px;
+    flex-wrap: wrap;
+}
+
+.candidate-dashboard a {
+    margin-top: 21px;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.candidate-dashboard-item {
+    width: 233px;
+    height: 144px;
+    border: 1px solid #bcbcbc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.candidate-dashboard-item img {
+    transform: scale(0.7);
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+}
+
+.candidate-dashboard-item span {
+    color: #272262;
+}
+
+
