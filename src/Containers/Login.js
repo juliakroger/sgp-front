@@ -1,14 +1,19 @@
 import React, {Component} from 'react';
-import Amplify from 'aws-amplify';
-import Auth from '@aws-amplify/auth';
-
+import Amplify, { Auth } from 'aws-amplify';
 import '../CSS/Login.css';
 
 Amplify.configure({
     API: {
-        graphql_endpoint: 'https://provafacil.auth.us-east-1.amazoncognito.com'
+        graphql_endpoint: 'https://provafacil.auth.us-east-1.amazoncognito.com',
+    },
+    Auth: {
+        identityPoolId:  'us-east-1:0fc56bd8-50ba-4583-bc92-3ebb98469502',
+        region: 'us-east-1',
+        userPoolId: 'us-east-1_12QaBDnB7',
+        userPoolWebClientId: '5sflv6jt0858s9tp8k70hco4nh',
     }
 });
+
 
 class Login extends Component {
     state = {
@@ -17,14 +22,13 @@ class Login extends Component {
     }
 
     loginHandler = (event) => {
-            const username = this.state.username;
-            const password = this.state.password;
-
-        Auth.signIn(username, password)
-            .then(user => console.log(user))
-            .catch(err => console.log(err));
-
+        console.log(this.state.username, this.state.password)
+        Auth.signIn(this.state.username, this.state.password)
+            .then(response => console.log('200', response))
+            .catch(error => console.log('400', error.message))
     }
+
+
 
     onUsernameChange = (event) => {
         this.setState({username: event.target.value})
