@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import data from '../../API/wrapper.json';
-import TotalQuestions from './Charts/HomeCharts/TotalQuestions';
-import TestsByMonth from './Charts/HomeCharts/TestsByMonth';
-import ProcessedQuestions from "./Charts/HomeCharts/ProcessedQuestions";
-import TestsTypes from "./Charts/HomeCharts/TestsTypes";
-import QuestionsDifficulty from './Charts/HomeCharts/QuestionsDifficulty';
-import ProcessedTests from './Charts/HomeCharts/ProcessedTests';
+import data from '../../../API/wrapper.json';
+import TotalQuestions from '../Charts/HomeCharts/TotalQuestions';
+import TestsByMonth from '../Charts/HomeCharts/TestsByMonth';
+import ProcessedQuestions from "../Charts/HomeCharts/ProcessedQuestions";
+import TestsTypes from "../Charts/HomeCharts/TestsTypes";
+import QuestionsDifficulty from '../Charts/HomeCharts/QuestionsDifficulty';
+import ProcessedTests from '../Charts/HomeCharts/ProcessedTests';
 
-class Wrapper extends Component {
+class Home extends Component {
     render() {
         return (
             <div>
@@ -77,4 +77,4 @@ class Wrapper extends Component {
     };
 };
 
-export default Wrapper;
+export default Home;

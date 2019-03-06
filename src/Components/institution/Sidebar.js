@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import data from '../../API/menu.json';
+import {Link} from 'react-router-dom';
 
 class Sidebar extends Component {
     state = {
@@ -78,7 +79,8 @@ class Sidebar extends Component {
                             <p className="text-white small" hidden={!data["config-menu"].pages["academic-submenu"].active}>Acadêmicos</p>
                             <p className="text-white small" hidden={!data["config-menu"].pages["content-candidate-submenu"].active}>Conteúdos</p>
                             <p className="text-white small" hidden={!data["config-menu"].pages["place-submenu"].active}>Locais</p>
-                            <p className="text-white small">Alunos</p>
+                            <Link to="/candidate"><p className="text-white small">Alunos</p></Link>
+
                             <p className="text-white small" hidden={!data["config-menu"].pages["user-group-submenu"].active}>Usuário</p>
                             <p className="text-white small">Grupo de Usuários</p>
                             <p className="text-white small" hidden={!data["config-menu"].pages["import-submenu"].active}>Importação de dados</p>

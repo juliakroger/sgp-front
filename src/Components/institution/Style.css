@@ -45,3 +45,11 @@
 .menuItem a:hover {
     color: #278137 !important;
 }
+
+.sidenav a {
+    padding: 0px 0px 0px 0px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+}

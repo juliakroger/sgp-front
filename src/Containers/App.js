@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter,Switch,Route } from "react-router-dom";
-import Home from  './Home';
+import InstitutionHomePage from './InstitutionHomePage';
 import Login from './Login';
 import StudentHomePage from './StudentHomePage';
 
@@ -9,7 +9,7 @@ class App extends Component {
     return (
         <BrowserRouter>
             <Switch>
-              <Route path="/home" component={Home}/>
+              <Route path="/home" component={InstitutionHomePage}/>
               <Route path="/schedule" component={StudentHomePage}/>
               <Route path="/" component={Login}/>
             </Switch>
