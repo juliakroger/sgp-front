@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import data from '../../../API/wrapper.json';
+import data from '../../API/wrapper.json';
 import TotalQuestions from '../Charts/HomeCharts/TotalQuestions';
 import TestsByMonth from '../Charts/HomeCharts/TestsByMonth';
 import ProcessedQuestions from "../Charts/HomeCharts/ProcessedQuestions";
@@ -10,7 +10,7 @@ import ProcessedTests from '../Charts/HomeCharts/ProcessedTests';
 class Home extends Component {
     render() {
         return (
-            <div>
+            <div className="ml-md-4">
             <div className="row">
                 <div className="mr-md-2 col list-group-item-purple">
                     <div className="row">

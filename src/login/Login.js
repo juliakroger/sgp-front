@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../store/actions/actionsTypes';
 import Amplify, { Auth } from 'aws-amplify';
-import '../CSS/Login.css';
+import './Login.css';
 
 Amplify.configure({
     API: {
@@ -16,17 +18,12 @@ Amplify.configure({
 
 
 class Login extends Component {
-    state = {
-        username: '',
-        password: '',
-    }
-
     loginHandler = (event) => {
-        console.log(this.state.username, this.state.password)
-        Auth.signIn(this.state.username, this.state.password)
+        console.log(this.props.username, this.props.password)
+        Auth.signIn(this.props.username, this.props.password)
             .then(response => {
-                console.log('200', response)
                 this.props.history.push("/home");
+
             })
             .catch(error => console.log('400', error.message))
     }
@@ -34,13 +31,11 @@ class Login extends Component {
 
 
     onUsernameChange = (event) => {
-        this.setState({username: event.target.value})
+        this.props.onUserNameEnter(event.target.value)
     }
-
     onPassowordChange = (event) => {
-        this.setState({password: event.target.value})
+        this.props.onIngredientRemoved(event.target.value)
     }
-
 
     render () {
         return (
@@ -68,39 +63,34 @@ class Login extends Component {
                         </div>
                     </div>
                     <div className="login-footer-images">
-                        <a href="https://www.provafacilnaweb.com.br/avaliar" target="_blank">
-                            <img className="active"
+                        <a href="https://www.provafacilnaweb.com.br/avaliar" >
+                            <img alt='avaliar' className="active"
                                  src="https://cdn.starlinetecnologia.com.br/images/logo-avaliacoes-regulares-white.svg"
-                                 data-toggle="popover" data-placement="bottom" data-trigger="hover" data-html="true"
-                                 data-content="Sua Solução" data-original-title="" title=""/>
+                                 />
                         </a>
 
-                        <a href="https://www.provafacilnaweb.com.br/treinar" target="_blank">
-                            <img className=""
+                        <a href="https://www.provafacilnaweb.com.br/treinar">
+                            <img alt='treinar' className=""
                                  src="https://cdn.starlinetecnologia.com.br/images/logo-simulados-white.svg"
-                                 data-toggle="popover" data-placement="bottom" data-trigger="hover" data-html="true"
-                                 data-content="Conhecer Solução" data-original-title="" title=""/>
+                                 />
                         </a>
 
-                        <a href="https://www.provafacilnaweb.com.br/medir" target="_blank">
-                            <img className="active"
+                        <a href="https://www.provafacilnaweb.com.br/medir">
+                            <img alt='medir'
                                  src="https://cdn.starlinetecnologia.com.br/images/logo-pesquisa-white.svg"
-                                 data-toggle="popover" data-placement="bottom" data-trigger="hover" data-html="true"
-                                 data-content="Sua Solução" data-original-title="" title=""/>
+                                 />
                         </a>
 
-                        <a href="https://www.provafacilnaweb.com.br/selecionar" target="_blank">
-                            <img className=""
+                        <a href="https://www.provafacilnaweb.com.br/selecionar">
+                            <img alt='selecionar'
                                  src="https://cdn.starlinetecnologia.com.br/images/logo-processo-de-selecao-white.svg"
-                                 data-toggle="popover" data-placement="bottom" data-trigger="hover" data-html="true"
-                                 data-content="Conhecer Solução" data-original-title="" title=""/>
+                                 />
                         </a>
 
-                        <a href="https://www.provafacilnaweb.com.br/corrigir" target="_blank">
-                            <img className=""
+                        <a href="https://www.provafacilnaweb.com.br/corrigir">
+                            <img alt='corrigir'
                                  src="https://cdn.starlinetecnologia.com.br/images/logo-professor-white.svg"
-                                 data-toggle="popover" data-placement="bottom" data-trigger="hover" data-html="true"
-                                 data-content="Conhecer Solução" data-original-title="" title=""/>
+                                 />
                         </a>
                     </div>
                 </div>
@@ -110,4 +100,19 @@ class Login extends Component {
     };
 };
 
-export default Login;
+const mapStateToProps = state => {
+    return {
+        username: state.username,
+        password: state.password
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onUserNameEnter: (payload) => dispatch({type: actions.USERNAME_ENTER, payload: payload }),
+        onIngredientRemoved: (payload) => dispatch({type: actions.PASSWORD_ENTER, payload: payload})
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

@@ -8,10 +8,12 @@ const COLORS = ['#FF8A65', '#D2D2D2'];
 
 class ProcessedQuestions extends Component {
     componentWillMount() {
-        data.push(
-            {name: 'Procesadas', value: this.props.data.processed},
-            {name: 'Não processadas', value: this.props.data.not_processed}
-        )
+        if (data.length === 0) {
+            data.push(
+                {name: 'Procesadas', value: this.props.data.processed},
+                {name: 'Não processadas', value: this.props.data.not_processed}
+            )
+        }
     }
 
     render() {

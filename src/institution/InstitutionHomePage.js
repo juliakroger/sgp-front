@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {Route} from 'react-router-dom';
-
-import Sidebar from '../Components/institution/Sidebar';
-import Navbar from '../Components/institution/Navbar';
-import Home from '../Components/institution/pages/Home';
-import Candidate from '../Components/institution/pages/Candidate';
+import Sidebar from './components/Sidebar';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Candidate from './pages/Candidate';
 
 
 class InstitutionHomePage extends Component {
@@ -15,7 +14,8 @@ class InstitutionHomePage extends Component {
                 <Sidebar/>
                 <div className="main">
                     <Navbar />
-                    <Candidate/>
+                    <Route exact path={'/home/'} component={Home}/>
+                    <Route path={`/home/candidate`} component={Candidate}/>
                 </div>
             </div>
         );

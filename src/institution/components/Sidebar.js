@@ -16,7 +16,7 @@ class Sidebar extends Component {
     render() {
         return (
             <div className="sidenav">
-                <img alt='logo' src="https://strtec.s3.amazonaws.com/demo/logos/f090c20c-7492-11e8-ad59-0242ac11000f_sys_logo.png" style={{width: '240px'}}/>
+                <Link to="/home" ><img alt='logo' src="https://strtec.s3.amazonaws.com/demo/logos/f090c20c-7492-11e8-ad59-0242ac11000f_sys_logo.png" style={{width: '240px'}}/></Link>
                 <nav className="nav flex-column">
 
                         <div className="navbar text-white pointer" onClick={() => this.hiddenHandler('create')} hidden={!data["create-menu"].active}>
@@ -79,7 +79,7 @@ class Sidebar extends Component {
                             <p className="text-white small" hidden={!data["config-menu"].pages["academic-submenu"].active}>Acadêmicos</p>
                             <p className="text-white small" hidden={!data["config-menu"].pages["content-candidate-submenu"].active}>Conteúdos</p>
                             <p className="text-white small" hidden={!data["config-menu"].pages["place-submenu"].active}>Locais</p>
-                            <Link to="/candidate"><p className="text-white small">Alunos</p></Link>
+                            <Link to="home/candidate"><p className="text-white small">Alunos</p></Link>
 
                             <p className="text-white small" hidden={!data["config-menu"].pages["user-group-submenu"].active}>Usuário</p>
                             <p className="text-white small">Grupo de Usuários</p>

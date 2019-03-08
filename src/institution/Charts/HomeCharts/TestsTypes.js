@@ -8,19 +8,21 @@ const data = [];
 class TestsTypes extends Component {
 
     componentWillMount() {
-        let i = 0;
-        this.props.nominal.map((value) => {
-            let not_nominal = 0;
-            if (this.props.not_nominal[i].data === value.data){
-                not_nominal = this.props.not_nominal[i].total;
-                i++;
-            }
-            return data.push({
-                name: value.data,
-                "nominal": value.total,
-                "nao nominal": not_nominal
+        if (data.length === 0) {
+            let i = 0;
+            this.props.nominal.map((value) => {
+                let not_nominal = 0;
+                if (this.props.not_nominal[i].data === value.data) {
+                    not_nominal = this.props.not_nominal[i].total;
+                    i++;
+                }
+                return data.push({
+                    name: value.data,
+                    "nominal": value.total,
+                    "nao nominal": not_nominal
+                })
             })
-        })
+        }
     }
 
     render() {

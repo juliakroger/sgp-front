@@ -4,11 +4,13 @@ import {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts';
 const data = [];
 class ProcessedQuestions extends Component {
     componentWillMount() {
+        if (data.length === 0){
         this.props.data.map(value => data.push({
                 total: value.total,
                 data: value.data
             })
-        )
+        )}
+
     }
 
     render() {

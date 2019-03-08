@@ -10,13 +10,14 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 export default class Example extends Component {
     componentWillMount() {
-        this.props.data.map(value => data.push({
-                name: value.nome,
-                value: parseFloat(value.porcentagem.toFixed(1)),
-                total: value.total
-            })
-
-        )
+        if (data.length === 0) {
+            this.props.data.map(value => data.push({
+                    name: value.nome,
+                    value: parseFloat(value.porcentagem.toFixed(1)),
+                    total: value.total
+                })
+            )
+        }
     }
 
     render() {
