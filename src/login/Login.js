@@ -16,16 +16,16 @@ Amplify.configure({
     }
 });
 
-
+//this.props.history.push("/home");
 class Login extends Component {
     loginHandler = (event) => {
         console.log(this.props.username, this.props.password)
         Auth.signIn(this.props.username, this.props.password)
             .then(response => {
-                this.props.history.push("/home");
-
+                console.log('200', response)
             })
             .catch(error => console.log('400', error.message))
+
     }
 
 

@@ -2,37 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5129f0d-a2d9-4124-9396-26e26693293c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/institution/pages/Candidate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/institution/pages/pages.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/actions/actionsTypes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/reducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSS/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/Login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSS/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/candidate/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/candidate/components/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/candidate/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/candidate/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/candidate/candidate.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/candidate/css/candidate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/institution/Charts/HomeCharts/ProcessedQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/institution/Charts/HomeCharts/ProcessedQuestions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/institution/Charts/HomeCharts/ProcessedTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/institution/Charts/HomeCharts/ProcessedTests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/institution/Charts/HomeCharts/QuestionsDifficulty.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/institution/Charts/HomeCharts/QuestionsDifficulty.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/institution/Charts/HomeCharts/TestsByMonth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/institution/Charts/HomeCharts/TestsByMonth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/institution/Charts/HomeCharts/TestsTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/institution/Charts/HomeCharts/TestsTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/institution/Charts/HomeCharts/TotalQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/institution/Charts/HomeCharts/TotalQuestions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/institution/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/institution/components/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/institution/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/institution/components/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/institution/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/institution/css/Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/institution/pages/Candidate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/institution/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/institution/pages/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Containers/InstitutionHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/institution/InstitutionHomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Containers/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Containers/StudentHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/candidate/CandidateHomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/institution/pages/Candidate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/institution/pages/Candidate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/Login.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -46,10 +20,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/institution/pages/Candidate.js">
+        <entry file="file://$PROJECT_DIR$/src/login/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+            <state relative-caret-position="475">
+              <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -122,8 +96,8 @@
         <option value="$PROJECT_DIR$/src/login/LoginButton.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/reducers.js" />
         <option value="$PROJECT_DIR$/src/candidate/CandidateHomePage.js" />
-        <option value="$PROJECT_DIR$/src/login/Login.js" />
         <option value="$PROJECT_DIR$/src/institution/pages/Candidate.js" />
+        <option value="$PROJECT_DIR$/src/login/Login.js" />
       </list>
     </option>
   </component>
@@ -232,11 +206,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551459484762</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commiting changes">
+      <created>1552070138507</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1552070138507</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89226000" />
+    <option name="totallyTimeSpent" value="92556000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1298" y="155" width="1262" height="1290" extended-state="0" />
@@ -246,6 +227,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32966024" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -287,7 +269,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="the finish home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="the finish home page" />
+    <MESSAGE value="commiting changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="commiting changes" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.css" />
@@ -646,20 +629,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/login/Login.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="23">
+          <caret line="603" column="8" selection-start-line="603" selection-start-column="8" selection-end-line="603" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/institution/pages/Candidate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        <state relative-caret-position="230">
+          <caret line="507" column="12" lean-forward="true" selection-start-line="507" selection-start-column="12" selection-end-line="507" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#234#15197#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/login/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
