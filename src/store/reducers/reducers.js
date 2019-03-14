@@ -1,28 +1,9 @@
-import * as actions from '../actions/actionsTypes';
-
-const initialState = {
-    username: '',
-    password: '',
-}
-
-const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case actions.USERNAME_ENTER:
-            return {
-                ...state,
-                username: action.payload,
-            }
-
-        case actions.PASSWORD_ENTER:
-            return {
-                ...state,
-                password: action.payload
-            }
+import { combineReducers } from 'redux';
+import localReducer from './localReducer';
+import loginReducer from './loginReducer';
 
 
-        default:
-            return state;
-    }
-};
+const rootReducer = combineReducers({ localReducer, loginReducer });
 
-export default reducer;
+export default rootReducer;
+

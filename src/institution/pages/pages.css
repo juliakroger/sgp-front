@@ -113,3 +113,9 @@
 .font-13 {
     font-size: 13px;
 }
+
+/*PLACE PAGE*/
+.steps {
+    border-top: 1px solid #F3F3F3;
+    border-bottom: 1px solid #F3F3F3;
+}

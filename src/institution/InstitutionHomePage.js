@@ -4,10 +4,9 @@ import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Candidate from './pages/Candidate';
-
+import Place from './pages/Place';
 
 class InstitutionHomePage extends Component {
-
     render() {
         return (
             <div>
@@ -15,7 +14,9 @@ class InstitutionHomePage extends Component {
                 <div className="main">
                     <Navbar />
                     <Route exact path={'/home/'} component={Home}/>
+                    <Route path={`/home/place`} component={Place}/>
                     <Route path={`/home/candidate`} component={Candidate}/>
+
                 </div>
             </div>
         );

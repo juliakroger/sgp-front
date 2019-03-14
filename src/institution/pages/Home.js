@@ -18,7 +18,7 @@ class Home extends Component {
                             <i className="fa fa-2x fa-save"></i>
                         </div>
                         <div className="col-md-4 mb-3">
-                            <h1 className="timer" id="total_questions">{data.total_questions}</h1>
+                            <h1 className="text-white" id="total_questions">{data.total_questions}</h1>
                             <p>Questões Cadastradas</p>
                         </div>
                     </div>
@@ -30,7 +30,7 @@ class Home extends Component {
                             <i className="fa fa-2x fa-bars"></i>
                         </div>
                         <div className="col-md-4 mb-3 value gray">
-                            <h1 className="purple-color timer" id="total_questions_discursive">{data.discursive_questions}</h1>
+                            <h1 className="purple-color" id="total_questions_discursive">{data.discursive_questions}</h1>
                             <p>Questões Discursivas</p>
                         </div>
 
@@ -43,7 +43,7 @@ class Home extends Component {
                             <i className="fa fa-2x fa-list-ul"></i>
                         </div>
                         <div className="col-md-4 mb-3">
-                            <h1 className="timer" id="total_questions_objective">{data.objective_questions}</h1>
+                            <h1 className="text-white" id="total_questions_objective">{data.objective_questions}</h1>
                             <p>Questões Objetivas</p>
                         </div>
                     </div>
@@ -55,7 +55,7 @@ class Home extends Component {
                             <i className="fa fa-2x fa-file-text"></i>
                         </div>
                         <div className="col-md-4 mb-3 value gray">
-                            <h1 className="green-color timer" id="total_tests">{data.total_tests}</h1>
+                            <h1 className="green-color" id="total_tests">{data.total_tests}</h1>
                             <p>Provas Geradas</p>
                         </div>
 

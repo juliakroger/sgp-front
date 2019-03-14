@@ -6,10 +6,10 @@ class Navebar extends Component {
         return (
             <div className="navbar navbar-light bg-light">
                 <div>
-                    <i className="fa fa-dedent nav-link pointer"/>
+                    <i className="fas fa-outdent nav-link pointer"/>
                     <i className="fa fa-home nav-link pointer"/>
                     <i className="fa fa-tasks nav-link pointer"/>
-                    <i className="fa fa-bell-o nav-link pointer"/>
+                    <i className="far fa-bell nav-link pointer"/>
                 </div>
                 <form className="form-inline">
                     <p className="small mr-md-1 mt-md-3">Unidades:</p>

@@ -46,10 +46,14 @@
     color: #278137 !important;
 }
 
-.sidenav a {
-    padding: 0px 0px 0px 0px;
+.sidenav p:hover {
     text-decoration: none;
-    font-size: 15px;
-    color: #818181;
-    display: block;
+    color: #5cc691 !important;
+    cursor: pointer;
+}
+
+.sidenav p::before {
+    margin-right: 1px;
+    content: "•";
+    color: #5cc691;
 }

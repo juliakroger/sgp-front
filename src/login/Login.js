@@ -16,12 +16,12 @@ Amplify.configure({
     }
 });
 
-//this.props.history.push("/home");
 class Login extends Component {
     loginHandler = (event) => {
         console.log(this.props.username, this.props.password)
         Auth.signIn(this.props.username, this.props.password)
             .then(response => {
+                this.props.history.push("/home");
                 console.log('200', response)
             })
             .catch(error => console.log('400', error.message))
@@ -102,8 +102,8 @@ class Login extends Component {
 
 const mapStateToProps = state => {
     return {
-        username: state.username,
-        password: state.password
+        username: state.loginReducer.username,
+        password: state.loginReducer.password
     }
 }
 
