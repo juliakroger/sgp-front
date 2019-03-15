@@ -9,3 +9,4 @@ export const USERS_LOGIN_FAILURE = 'USERS_LOGIN_FAILURE';
 //local page
 export const ATUAL_LOCAL = 'ATUAL_LOCAL';
 export const LOCAL_RESPONSE = 'LOCAL_RESPONSE';
+export const LOCAL_FIELD_FILL = 'LOCAL_FIELD_FILL';

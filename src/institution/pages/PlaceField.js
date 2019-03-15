@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import 'antd/dist/antd.css';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/actionsTypes';
-import { Tree } from 'antd';
+import { Tree, Icon } from 'antd';
 import axios from 'axios';
 
 const { TreeNode } = Tree;
@@ -23,28 +23,23 @@ class PlaceField extends Component {
             .catch(error => console.log(error))
     }
 
-    findChildren = () => {
-        console.log(this.props.atualLocal)
-        console.log(this.state.children)
-        /*data.map((children) => {
-            if(children.pk == pk){
-                console.log('achei o', children.pk, 'do', children.name)
+    findChildren = (data) => {
+        data.map((children) => {
+            if (children.pk == this.props.atualLocal) {
                 Object.assign(children, this.state.children)
             }
             else {
-                if(children.hasOwnProperty('children')){
-                    this.findChildren(children.children, pk)
-                }
-                else{
-                    console.log('nao achei')
+                if (children.hasOwnProperty('children')){
+                    this.findChildren(children.children)
                 }
             }
         })
-        console.log(this.state.data.children)*/
+
     }
 
-    onSelect = (selectedKeys) => {
-         this.props.onAtualLocal(selectedKeys[0]);
+    onSelect = (selectedKeys, e) => {
+         this.props.onAtualLocal(e.node.props.eventKey);
+        this.addChidren()
     }
 
     addChidren = () => {
@@ -53,21 +48,33 @@ class PlaceField extends Component {
             axios.get(URL)
                 .then(res =>{
                     this.setState({children: res.data})
+                    this.findChildren(this.state.data.children)
                 })
                 .catch(error => console.log(error))
-                 this.findChildren()
         }, 500 )
+    }
+
+    getFieldInfo = () => {
+        setTimeout (() => {
+            axios.get('https://sgp-homolog.provafacilnaweb.com.br/demo/api/v1/tm/rest/place/' + this.props.atualLocal + '/', {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Token d1c5a0ea6a837ea105a9ca3ce5356dace0d27e18'
+                }
+            })
+                .then(res => this.props.onFieldLoad(res.data))
+        }, 500)
     }
 
     render(){
         return (
-          <Tree onSelect={this.onSelect} defaultExpandedKeys={['local']} onClick={this.addChidren} autoExpandParent>
-             <TreeNode title="Meus Locais" key="local" >
+          <Tree onSelect={this.onSelect} defaultExpandedKeys={['local']} onClick={this.getFieldInfo} autoExpandParent>
+             <TreeNode title="Meus Locais" key="local">
              {
              (this.state.data.hasOwnProperty('children')) ?
              this.state.data.children.map(polo => {
                  return (
-                   <TreeNode title={polo.name} key={polo.pk}>
+                   <TreeNode title={polo.name} key={polo.pk} onCheck={this.getKey}>
                    {
                      (polo.hasOwnProperty('children')) ?
                       polo.children.map(predio => {
@@ -79,7 +86,11 @@ class PlaceField extends Component {
                               return (
                                  <TreeNode title={andar.name} key={andar.pk}>
                                   {
-                                      andar.hasOwnProperty('children') ? console.log('tem') : console.log('nao tem children ainda')
+                                      andar.hasOwnProperty('children') ?
+                                          andar.children.map(sala => {
+                                              return ( <TreeNode title={sala.name} key={sala.pk}></TreeNode> );
+                                          })
+                                          : console.log('nao tem children ainda')
                                   }
                                   </TreeNode>
                               )
@@ -111,6 +122,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onAtualLocal: (payload) => dispatch({type: actions.ATUAL_LOCAL, payload: payload }),
+        onFieldLoad: (payload) => dispatch({type: actions.LOCAL_FIELD_FILL, payload: payload})
     }
 }
 

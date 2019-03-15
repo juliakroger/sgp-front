@@ -16,6 +16,15 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 atualLocal: action.payload,
             }
+        case actions.LOCAL_FIELD_FILL:
+            return {
+                ...state,
+                client_group: action.payload.client_group,
+                client_unit: action.payload.client_unit,
+                name: action.payload.name,
+                short_name: action.payload.short_name,
+                legacy_key: action.payload.legacy_key
+            }
 
 
         default:

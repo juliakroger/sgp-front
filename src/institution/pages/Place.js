@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './pages.css';
 import PlaceField from './PlaceField';
 import PlaceForm from './PlaceForm';
 
