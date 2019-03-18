@@ -15,7 +15,6 @@ class PlaceField extends Component {
     }
 
     componentWillMount() {
-
         axios.get('https://sgp-homolog.provafacilnaweb.com.br/demo/api/v1/tm/rest/internal/placetree/')
             .then(res => {
                 this.setState({data: res.data})

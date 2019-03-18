@@ -22,7 +22,6 @@ class InstitutionHomePage extends Component {
                     <Route path={`/home/candidate`} component={Candidate}/>
                     <Route path={`/home/create/objective`} component={QuestionsBatchObjective}/>
                     <Route path={`/home/create/discursive`} component={QuestionsBatchDiscursive}/>
-
                 </div>
             </div>
         );
