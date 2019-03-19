@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {connect} from 'react-redux';
+import * as actions from "../../store/actions/actionsTypes";
+
 
 class QuestionsContentCascading extends Component {
     state = {
@@ -16,17 +19,23 @@ class QuestionsContentCascading extends Component {
         let URL = 'https://sgp-homolog.provafacilnaweb.com.br/demo/api/v1/str/rest/contentcascading/' + event.target.value;
         axios.get(URL)
             .then(res => {
+                console.log(res)
                 res.data.items.map(item => {
                     if(item.data.length > 0) {
                         this.state.data.map(dataItems => {
-                            if (dataItems.order === item.order){
-                                console.log(dataItems, item)
+                            if (dataItems.order >= item.order){
+                                dataItems.data = item.data;
                             }
                         })
                     }
                 })
+                this.forceUpdate();
             })
             .catch(error => console.log(error))
+    }
+
+    selectedContent = (event) => {
+        this.props.onContent(event.target.value);
     }
 
     render () {
@@ -37,7 +46,7 @@ class QuestionsContentCascading extends Component {
                         return (
                             <div key={item.order} className="col input-group-sm">
                                 <p>{item.name}</p>
-                                <select className="custom-select" id="inputGroupSelect">
+                                    <select className="custom-select" id="inputGroupSelect" onChange={this.selectedContent}>
                                     <option defaultValue>Selecione</option>
                                     {
                                         item.data.map(value => {
@@ -55,4 +64,11 @@ class QuestionsContentCascading extends Component {
 };
 
 
-export default QuestionsContentCascading;
+const mapDispatchToProps = dispatch => {
+    return {
+        onContent: (payload) => dispatch({type: actions.ADD_CONTENT_PK, payload: payload })
+    }
+};
+
+
+export default connect(null, mapDispatchToProps)(QuestionsContentCascading);

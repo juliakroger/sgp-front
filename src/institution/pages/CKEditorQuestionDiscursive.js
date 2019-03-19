@@ -1,31 +1,37 @@
 import React, { Component } from 'react';
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import {connect} from 'react-redux';
+import * as actions from "../../store/actions/actionsTypes";
 
 
 class CKEditorDiscursive extends Component {
+    state = {
+        body: '',
+        id: this.props.id
+    }
+
     render() {
         return (
                 <CKEditor
                     editor={ ClassicEditor }
-                    data=""
-                    onInit={ editor => {
-                        // You can store the "editor" and use when it is needed.
-                        console.log( 'Editor is ready to use!', editor );
-                    } }
                     onChange={ ( event, editor ) => {
                         const data = editor.getData();
-                        console.log( { event, editor, data } );
-                    } }
-                    onBlur={ editor => {
-                        console.log( 'Blur.', editor );
-                    } }
-                    onFocus={ editor => {
-                        console.log( 'Focus.', editor );
+                        this.setState({body: data})
+                        this.props.AddQuestionBody(data, this.state.id)
                     } }
                 />
         );
     }
 }
 
-export default CKEditorDiscursive;
+
+const mapDispatchToProps = dispatch => {
+    return {
+        AddQuestionBody: (body, id) => dispatch({type: actions.ADD_QUESTION_BODY, body: body, id: id })
+    }
+}
+
+
+
+export default connect(null, mapDispatchToProps)(CKEditorDiscursive);

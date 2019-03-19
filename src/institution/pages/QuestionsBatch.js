@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Modal } from 'antd';
 import { Link } from 'react-router-dom';
-import {Route} from 'react-router-dom';
 
 class QuestionsBatch extends Component {
     state = {
