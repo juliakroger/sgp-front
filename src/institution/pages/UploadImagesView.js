@@ -18,24 +18,28 @@ class UploadImagesView extends Component {
     }
   }
 
-  onChange = (e) => {
-    this.setState({fileName: e.target.files[0].name})
-    let data = {
-      tag_name: 'process',
-      file_name: e.target.files[0].name,
-    }
-    let headers = {
-      'X-CSRFToken': 'lw4royaVB6EFuuGmZifJuXI2BoRolTw2',
-      'X-Requested-With': 'XMLHttpRequest',
-
+  onURLGet = (url, file) => {
+    console.log(file)
+    let header = {
+      'Content-Type': file.type,
     }
 
-    this.changeTheLoading();
-
-    axios.post('https://sgp-homolog.provafacilnaweb.com.br/demo/urlstorageservice/getuploadurl/', data, {headers: headers})
+    axios.put(url, file,{headers: header})
         .then(res => console.log(res))
         .catch(error => console.log(error))
+  }
 
+  onFileSelect = (e) => {
+    let file = this.uploadInput.files[0];
+    this.setState({fileName: file.name})
+    let data = {
+      tag_name: 'process',
+      file_name: [file.name],
+    }
+
+    axios.post(' https://sgp-homolog.provafacilnaweb.com.br/demo/api/v1/rest/getuploadurl/', data)
+        .then(res => this.onURLGet(res.data[0].url, file))
+        .catch(error => console.log(error))
   }
 
   render() {
@@ -51,7 +55,7 @@ class UploadImagesView extends Component {
           <div className="wrapper">
             <div className="card ml-5 mr-5">
               <label className="btn btn-info pointer btn-sm" htmlFor='selecao-arquivo'>Selecionar um arquivo</label>
-              <input type="file" id='selecao-arquivo' accept="image/*,application/zip" onChange={this.onChange}/>
+              <input type="file" id='selecao-arquivo' accept="image/*,application/zip" ref={(ref) => { this.uploadInput = ref; }} onChange={this.onFileSelect}/>
               <ol>
                 <li>Você pode selecionar somente uma imagem por vez ou enviar um arquivo compactado</li>
                 <li>Tamanho máximo: 2.048 MB</li>
