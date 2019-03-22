@@ -11,7 +11,25 @@ import * as actions from "../../store/actions/actionsTypes";
 class QuestionsBatchDiscursive extends Component {
     state = {
         questionsAmount: [
-            {id: 1, type: 't', body: '', explain: ''}
+            {
+                key: '',
+                type: 't',
+                order: 1,
+                value: 1,
+                body: '',
+                explain:'<p>explanation</p>',
+                contentassensment_set: '',
+                textanswer_set: [{
+                    key: '',
+                    use_lines: true,
+                    explain: '',
+                    size_limit: 5,
+                    size_is_lines: true,
+                    is_text: false,
+                    is_answer: false,
+                    body: null
+                }]
+            }
         ]
     }
 
@@ -20,9 +38,76 @@ class QuestionsBatchDiscursive extends Component {
     }
 
     createQuestions = ({key}) => {
-        let id = this.state.questionsAmount.length+1;
+        let order = this.state.questionsAmount.length+1;
         let type = key;
-        this.state.questionsAmount.push({id: id, type: type, body: '', explain: ''})
+        if (type === 't') (
+            this.state.questionsAmount.push({
+                key: '',
+                type: type,
+                order: order,
+                value: 1,
+                body: '',
+                explain: '<p>explanation</p>',
+                contentassensment_set: '',
+                textanswer_set: [{
+                    key: '',
+                    use_lines: true,
+                    explain: '',
+                    size_limit: 5,
+                    size_is_lines: true,
+                    is_text: false,
+                    is_answer: false,
+                    body: null
+                }]
+            })
+        )
+        else {
+            this.state.questionsAmount.push({
+                key: '',
+                type: type,
+                order: order,
+                value: 1,
+                body: '',
+                explain: '<p>explain</p>',
+                contentassensment_set: '',
+                alternative_set: [
+                    {
+                    key: '',
+                    correct: false,
+                    order: 1,
+                    body: '',
+                    explain: ''},
+                    {
+                        key: '',
+                        correct: false,
+                        order: 2,
+                        body: '',
+                        explain: ''
+                    },
+                    {
+                        key: '',
+                        correct: false,
+                        order: 3,
+                        body: '',
+                        explain: ''
+                    },
+                    {
+                        key: '',
+                        correct: false,
+                        order: 4,
+                        body: '',
+                        explain: ''
+                    },
+                    {
+                        key: '',
+                        correct: false,
+                        order: 5,
+                        body: '',
+                        explain: ''
+                    }
+                ]
+            })
+        }
         this.forceUpdate()
         this.props.DiscursivePageLoad(this.state.questionsAmount);
     };
@@ -86,12 +171,12 @@ class QuestionsBatchDiscursive extends Component {
                 {
                     this.state.questionsAmount.map(question => {
                         return (
-                            <div className="card bg-light ml-2 mt-2" key={question.id}>
-                            <div className="card-header">Questão {question.id}</div>
+                            <div className="card bg-light ml-2 mt-2" key={question.order}>
+                            <div className="card-header">Questão {question.order}</div>
                             <div className="card-body">
                                 {
-                                    (question.type == 't') ?  <CKEditorQuestionDiscursive id={question.id}/>
-                                    : <CKEditorQuestionObjective />
+                                    (question.type == 't') ?  <CKEditorQuestionDiscursive order={question.order}/>
+                                    : <CKEditorQuestionObjective order={question.order}/>
 
                                 }
                             </div>

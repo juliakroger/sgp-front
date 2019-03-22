@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import { Modal } from 'antd';
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 class QuestionsBatch extends Component {
     state = {
-        visible: false
+        visible: false,
+        data: [],
+        page: 0
     }
 
     showModal = () => {
@@ -17,6 +20,25 @@ class QuestionsBatch extends Component {
         this.setState({
             visible: false,
         });
+    }
+
+    componentWillMount() {
+        axios.get('https://sgp-homolog.provafacilnaweb.com.br/demo/api/v1/tm/rest/candidate/', {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Token d1c5a0ea6a837ea105a9ca3ce5356dace0d27e18'
+            }
+        })
+            .then(response => {
+                console.log(response.data)
+                this.setState({data: response.data})
+            })
+            .catch(error => console.log(error))
+    }
+
+    paginationHandler = (page) => {
+        const goTo = page.target.id;
+        console.log(goTo)
     }
 
     render(){
@@ -42,6 +64,9 @@ class QuestionsBatch extends Component {
                         <Link to='/home/create/objective'><p id="objective-question" className="btn btn-success m-r-12 pull-right">Objetiva</p></Link>
                     </div>
                 </Modal>
+                <div className="wrapper">
+
+                </div>
 
             </div>
         );

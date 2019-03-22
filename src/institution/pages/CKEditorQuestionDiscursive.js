@@ -8,7 +8,7 @@ import * as actions from "../../store/actions/actionsTypes";
 class CKEditorDiscursive extends Component {
     state = {
         body: '',
-        id: this.props.id
+        order: this.props.order,
     }
 
     render() {
@@ -18,7 +18,7 @@ class CKEditorDiscursive extends Component {
                     onChange={ ( event, editor ) => {
                         const data = editor.getData();
                         this.setState({body: data})
-                        this.props.AddQuestionBody(data, this.state.id)
+                        this.props.AddQuestionBody(data, this.state.order)
                     } }
                 />
         );
@@ -28,7 +28,7 @@ class CKEditorDiscursive extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        AddQuestionBody: (body, id) => dispatch({type: actions.ADD_QUESTION_BODY, body: body, id: id })
+        AddQuestionBody: (body, order) => dispatch({type: actions.ADD_QUESTION_BODY, body: body, order: order })
     }
 }
 

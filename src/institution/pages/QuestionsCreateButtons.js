@@ -2,14 +2,35 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
 
-const data =
-    {"user_id":"2","id":"","category":"","save_type":"skip_flow","level":1,"workflow_approved":"","workflow_step":"","contentassessment_set":["bb190b32-00c0-11e5-81a9-b8ac6f91c81a"],"itemcontent":{"key":"","status_review":"","creation_comment":"","support":{"key":"","body":"","explain":""},"command_set":[{"key":"","type":"t","order":1,"value":1,"body":"<p>texto da quest&atilde;o</p><p data-f-id=\"pbf\" style=\"text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;\">Powered by <a href=\"https://www.froala.com/wysiwyg-editor?pb=1\" title=\"Froala Editor\">Froala Editor</a></p>","explain":"<p>justificativa da quest&atilde;o</p><p data-f-id=\"pbf\" style=\"text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;\">Powered by <a href=\"https://www.froala.com/wysiwyg-editor?pb=1\" title=\"Froala Editor\">Froala Editor</a></p>","contentassessment_set":"","textanswer_set":[{"key":"","use_lines":true,"explain":"","size_limit":5,"size_is_lines":true,"is_text":false,"is_answer":false,"body":null}]}]},"tags":[],"type":"t"}
 
 class QuestionsCreateButtons extends Component {
-
-
     cadastrarQuestao = () => {
-        axios.post('https://sgp-homolog.provafacilnaweb.com.br/demo/api/v1/ib/rest/item/create/',data)
+        console.log(this.props.questions)
+        let data = {
+            "user_id":"2",
+            "id":"",
+            "category":"",
+            "save_type":"skip_flow",
+            "level": this.props.difficultyLevel,
+            "workflow_approved":"",
+            "workflow_step":"",
+            "contentassessment_set": [this.props.content_pk],
+            "itemcontent":{
+                "key":"",
+                "status_review":"",
+                "creation_comment":"",
+                "support":{
+                    "key":"",
+                    "body":"",
+                    "explain":""
+                },
+                "command_set":this.props.questions
+            },
+            "tags":[],
+            "type":"x"
+        }
+
+        axios.post('https://sgp-homolog.provafacilnaweb.com.br/demo/api/v1/ib/rest/item/create/', data)
             .then(res => console.log(res))
             .catch(error => console.log(error))
     }
@@ -28,7 +49,9 @@ class QuestionsCreateButtons extends Component {
 
 const mapStateToProps = state => {
     return {
-        username: state.loginReducer.username,
+        content_pk: state.createQuestionsReducer.content_pk,
+        difficultyLevel: state.createQuestionsReducer.difficultyLevel,
+        questions: state.createQuestionsReducer.questions,
     }
 }
 

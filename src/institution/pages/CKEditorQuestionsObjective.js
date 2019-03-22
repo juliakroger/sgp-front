@@ -1,177 +1,121 @@
 import React, { Component } from 'react';
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { Radio } from 'antd';
+import * as actions from "../../store/actions/actionsTypes";
+import {connect} from "react-redux";
 
-
+const RadioGroup = Radio.Group;
 class CKEditorObjective extends Component {
+    state = {
+        body: '',
+        order: this.props.order,
+        radioValue: 1,
+        textAnswer: [
+                {
+                    key: '',
+                    correct: true,
+                    order: 1,
+                    body: '',
+                    explain: ''
+                },
+                {
+                    key: '',
+                    correct: false,
+                    order: 2,
+                    body: '',
+                    explain: ''
+                },
+                {
+                    key: '',
+                    correct: false,
+                    order: 3,
+                    body: '',
+                    explain: ''
+                },
+                {
+                    key: '',
+                    correct: false,
+                    order: 4,
+                    body: '',
+                    explain: ''
+                },
+                {
+                    key: '',
+                    correct: false,
+                    order: 5,
+                    body: '',
+                    explain: ''
+                }
+            ]
+        }
+
+    onChange = (e) => {
+        this.setState({radioValue: e.target.value});
+        this.state.textAnswer.map((awnswer, i) => {
+            if (awnswer.order === e.target.value){
+                this.state.textAnswer[i].correct = true;
+            }
+            else {
+                this.state.textAnswer[i].correct = false;
+            }
+        })
+        this.props.UpdateAnswerField(this.state.textAnswer, this.state.order)
+    }
+
     render() {
         return (
             <div>
                 <p>Enunciado</p>
                 <CKEditor
                     editor={ ClassicEditor }
-                    data=""
-                    onInit={ editor => {
-                        // You can store the "editor" and use when it is needed.
-                        console.log( 'Editor is ready to use!', editor );
-                    } }
                     onChange={ ( event, editor ) => {
                         const data = editor.getData();
-                        console.log( { event, editor, data } );
-                    } }
-                    onBlur={ editor => {
-                        console.log( 'Blur.', editor );
-                    } }
-                    onFocus={ editor => {
-                        console.log( 'Focus.', editor );
+                        this.setState({body: data})
+                        this.props.AddQuestionBody(data, this.state.order)
                     } }
                 />
 
-                <p>Selecione a resposta correta.</p>
+                <p>Selecione a resposta correta:</p>
                 <div className="mr-4">
-
-                    <div className="form-inline">
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="facil"
-                                   value="facil"/>
-                            <label className="form-check-label" htmlFor="facil">A)</label>
-                        </div>
-                        <div className="col">
-                            <CKEditor
-                                editor={ ClassicEditor }
-                                data=""
-                                onInit={ editor => {
-                                    // You can store the "editor" and use when it is needed.
-                                    console.log( 'Editor is ready to use!', editor );
-                                } }
-                                onChange={ ( event, editor ) => {
-                                    const data = editor.getData();
-                                    console.log( { event, editor, data } );
-                                } }
-                                onBlur={ editor => {
-                                    console.log( 'Blur.', editor );
-                                } }
-                                onFocus={ editor => {
-                                    console.log( 'Focus.', editor );
-                                } }/>
-                        </div>
-                    </div>
-
-                    <div className="form-inline mt-2">
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="facil"
-                               value="facil"/>
-                        <label className="form-check-label" htmlFor="facil">B)</label>
-                    </div>
-                        <div className="col">
-                        <CKEditor
-                            editor={ ClassicEditor }
-                            data=""
-                            onInit={ editor => {
-                                // You can store the "editor" and use when it is needed.
-                                console.log( 'Editor is ready to use!', editor );
-                            } }
-                            onChange={ ( event, editor ) => {
-                                const data = editor.getData();
-                                console.log( { event, editor, data } );
-                            } }
-                            onBlur={ editor => {
-                                console.log( 'Blur.', editor );
-                            } }
-                            onFocus={ editor => {
-                                console.log( 'Focus.', editor );
-                            } }
-                        />
-                        </div>
-                    </div>
-
-                    <div className="form-inline mt-2">
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="facil"
-                                   value="facil"/>
-                            <label className="form-check-label" htmlFor="facil">C)</label>
-                        </div>
-                        <div className="col">
-                            <CKEditor
-                                editor={ ClassicEditor }
-                                data=""
-                                onInit={ editor => {
-                                    // You can store the "editor" and use when it is needed.
-                                    console.log( 'Editor is ready to use!', editor );
-                                } }
-                                onChange={ ( event, editor ) => {
-                                    const data = editor.getData();
-                                    console.log( { event, editor, data } );
-                                } }
-                                onBlur={ editor => {
-                                    console.log( 'Blur.', editor );
-                                } }
-                                onFocus={ editor => {
-                                    console.log( 'Focus.', editor );
-                                } }
-                            />
-                        </div>
-                    </div>
-
-                    <div className="form-inline mt-2">
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="facil"
-                               value="facil"/>
-                        <label className="form-check-label" htmlFor="facil">D)</label>
-                    </div>
-                        <div className="col">
-                        <CKEditor
-                            editor={ ClassicEditor }
-                            data=""
-                            onInit={ editor => {
-                                // You can store the "editor" and use when it is needed.
-                                console.log( 'Editor is ready to use!', editor );
-                            } }
-                            onChange={ ( event, editor ) => {
-                                const data = editor.getData();
-                                console.log( { event, editor, data } );
-                            } }
-                            onBlur={ editor => {
-                                console.log( 'Blur.', editor );
-                            } }
-                            onFocus={ editor => {
-                                console.log( 'Focus.', editor );
-                            } }
-                        />
-                        </div>
-                    </div>
-
-                    <div className="form-inline mt-2">
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="facil"
-                               value="facil"/>
-                        <label className="form-check-label" htmlFor="facil">E)</label>
-                    </div>
-                        <div className="col">
-                        <CKEditor
-                            editor={ ClassicEditor }
-                            data=""
-                            onInit={ editor => {
-                                // You can store the "editor" and use when it is needed.
-                                console.log( 'Editor is ready to use!', editor );
-                            } }
-                            onChange={ ( event, editor ) => {
-                                const data = editor.getData();
-                                console.log( { event, editor, data } );
-                            } }
-                            onBlur={ editor => {
-                                console.log( 'Blur.', editor );
-                            } }
-                            onFocus={ editor => {
-                                console.log( 'Focus.', editor );
-                            } }
-                        />
-                        </div>
-                    </div>
+                {
+                    this.state.textAnswer.map((awnser, i) => {
+                        return (
+                            <div className="form-inline mb-2" key={i}>
+                                <RadioGroup onChange={this.onChange} value={this.state.radioValue}>
+                                    <Radio value={awnser.order}>
+                                        {
+                                            awnser.order === 1 ? 'A' : awnser.order === 2 ? 'B' : awnser.order === 3 ? 'C' : awnser.order === 4 ? 'D' : 'E'
+                                        }
+                                        )</Radio>
+                                </RadioGroup>
+                                <div className="col">
+                                    <CKEditor
+                                        editor={ ClassicEditor }
+                                        onChange={ ( event, editor ) => {
+                                            const data = editor.getData();
+                                            this.state.textAnswer[i].body = data;
+                                            this.props.UpdateAnswerField(this.state.textAnswer, this.state.order)
+                                        } }
+                                        />
+                                </div>
+                            </div>
+                        );
+                    })
+                }
                 </div>
             </div>
         );
     }
 }
 
-export default CKEditorObjective;
+const mapDispatchToProps = dispatch => {
+    return {
+        AddQuestionBody: (body, order) => dispatch({type: actions.ADD_QUESTION_BODY, body: body, order: order }),
+        UpdateAnswerField: (textAnswer, order) => dispatch({type: actions.UPDATE_AWNSERS_FIELD, textAnswer: textAnswer, order: order})
+    }
+}
+
+
+
+export default connect(null, mapDispatchToProps)(CKEditorObjective);
