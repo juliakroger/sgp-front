@@ -1,44 +1,57 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Progress} from 'antd';
-
+import {connect} from 'react-redux';
+import * as actions from "../../store/actions/actionsTypes";
 
 class UploadImagesView extends Component {
   state = {
-    loading: true,
     percent: 0,
     fileName: '',
   }
 
-  changeTheLoading = () => {
-    let atual = this.state.percent;
-    this.setState({percent: atual + 1})
-    if (this.state.percent <= 100) {
-      setTimeout(this.changeTheLoading, 300)
+  processImageWithURL = (keyName) => {
+    this.setState({percent: 80})
+    let data = {
+      name: this.state.fileName,
+      url: keyName
     }
+    axios.post('https://sgp-homolog.provafacilnaweb.com.br/demo/api/v1/prs/rest/process_image_with_url/', data)
+        .then(res => {
+          let process = res.data.process;
+          this.setState({percent: 100})
+          this.props.onProcessImage(process)
+          this.props.history.push("/home/process/" + process);
+        })
+        .catch(error => console.log(error))
   }
 
-  onURLGet = (url, file) => {
-    console.log(file)
+  onURLGet = (url, file, keyName) => {
+    this.setState({percent: 40})
     let header = {
       'Content-Type': file.type,
     }
-
     axios.put(url, file,{headers: header})
-        .then(res => console.log(res))
+        .then(() => {
+          this.setState({percent: 70})
+          this.processImageWithURL(keyName)
+        })
         .catch(error => console.log(error))
   }
 
   onFileSelect = (e) => {
     let file = this.uploadInput.files[0];
     this.setState({fileName: file.name})
+    this.setState({percent: 10})
     let data = {
       tag_name: 'process',
       file_name: [file.name],
     }
-
     axios.post(' https://sgp-homolog.provafacilnaweb.com.br/demo/api/v1/rest/getuploadurl/', data)
-        .then(res => this.onURLGet(res.data[0].url, file))
+        .then(res => {
+          this.setState({percent: 25})
+          this.onURLGet(res.data[0].url, file, res.data[0].key_name)
+        })
         .catch(error => console.log(error))
   }
 
@@ -70,4 +83,10 @@ class UploadImagesView extends Component {
   };
 };
 
-export default UploadImagesView;
+const mapDispatchToProps = dispatch => {
+  return {
+    onProcessImage: (payload) => dispatch({type: actions.ADD_PROCESS_IMAGE, payload: payload })
+  }
+}
+
+export default connect(null, mapDispatchToProps)(UploadImagesView);

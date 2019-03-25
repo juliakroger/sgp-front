@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import 'antd/dist/antd.css';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/actionsTypes';
-import { Tree, Icon } from 'antd';
+import { Tree } from 'antd';
 import axios from 'axios';
 
 const { TreeNode } = Tree;
@@ -37,7 +37,7 @@ class PlaceField extends Component {
     }
 
     onSelect = (selectedKeys, e) => {
-         this.props.onAtualLocal(e.node.props.eventKey);
+        this.props.onAtualLocal(e.node.props.eventKey);
         this.addChidren()
     }
 
