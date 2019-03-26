@@ -19,4 +19,5 @@ export const ADD_QUESTION_BODY = 'ADD_QUESTION_BODY';
 export const UPDATE_AWNSERS_FIELD = 'UPDATE_AWNSERS_FIELD';
 
 //process image page
+export const ADD_FILE_NAME = 'ADD_FILE_NAME';
 export const ADD_PROCESS_IMAGE = 'ADD_PROCESS_IMAGE';

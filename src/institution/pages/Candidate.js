@@ -8,7 +8,7 @@ class Candidate extends Component {
   state = {
     data: [],
     page: 0,
-  }
+  };
 
 //fazer um request com o numero de paginacao
   componentWillMount() {
@@ -19,7 +19,7 @@ class Candidate extends Component {
       },
     })
         .then(response => {
-          console.log(response.data)
+          console.log(response.data);
           this.setState({data: response.data})
         })
         .catch(error => console.log(error))
@@ -28,7 +28,7 @@ class Candidate extends Component {
   paginationHandler = (page) => {
     const goTo = page.target.id;
     console.log(goTo)
-  }
+  };
 
   render() {
     return (
@@ -116,6 +116,6 @@ class Candidate extends Component {
         </div>
     )
   };
-};
+}
 
 export default Candidate;
