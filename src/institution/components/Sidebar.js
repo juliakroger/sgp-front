@@ -31,7 +31,7 @@ class Sidebar extends Component {
             <div className="ml-md-5 sidebar-items" hidden={!(this.state.activeMenu === 'create')}>
               <Link to="/home/batch" hidden={!data["create-menu"].pages["batch-assessment-submenu"].active}><p
                   className="text-white small">Banco de questões</p></Link>
-              <Link to="/home/" hidden={!data["create-menu"].pages["test-template-submenu"].active}><p
+              <Link to="/home/templatetest" hidden={!data["create-menu"].pages["test-template-submenu"].active}><p
                   className="text-white small">Modelo de Avaliação</p></Link>
               <Link to="/home/" hidden={!data["create-menu"].pages["question-database-submenu"].active}><p
                   className="text-white small">Questionário</p></Link>

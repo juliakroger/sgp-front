@@ -68,7 +68,7 @@ class UploadImagesView extends Component {
               </div>
             </h3>
           </div>
-          <div className="wrapper">
+          <div className="mt-3">
             <div className="card ml-5 mr-5">
               <label className="btn btn-info pointer btn-sm" htmlFor='selecao-arquivo'>Selecionar um arquivo</label>
               <input type="file" id='selecao-arquivo' accept="image/*,application/zip" ref={(ref) => {

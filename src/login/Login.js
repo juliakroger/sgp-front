@@ -40,15 +40,13 @@ class Login extends Component {
     return (
         <div className='LoginScreen'>
           <header>
-            <img alt="logo"
-                 src="https://strtec.s3.amazonaws.com/demo/logos/f090c20c-7492-11e8-ad59-0242ac11000f_sys_logo.png"/>
+            <img alt="logo" src="https://strtec.s3.amazonaws.com/demo/logos/f090c20c-7492-11e8-ad59-0242ac11000f_sys_logo.png"/>
           </header>
 
           <section className="login-form-container">
             <div className="login-form">
               <input className="form-control" placeholder="Usuário" onChange={this.onUsernameChange}/>
               <input className="form-control" placeholder="Senha" type="password" onChange={this.onPassowordChange}/>
-
               <div className="login-btn" onClick={this.loginHandler}><span>Logar</span></div>
             </div>
           </section>

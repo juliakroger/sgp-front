@@ -47,7 +47,7 @@ class Candidate extends Component {
             </h3>
           </div>
 
-          <div className="wrapper">
+          <div className="wrapper bg-white ">
             <form>
               <div className="form-row">
                 <div className="col-sm-4">

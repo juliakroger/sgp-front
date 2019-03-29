@@ -69,10 +69,6 @@ class QuestionsBatch extends Component {
                                                    className="btn btn-success m-r-12 pull-right">Objetiva</p></Link>
             </div>
           </Modal>
-          <div className="wrapper">
-
-          </div>
-
         </div>
     );
   };
