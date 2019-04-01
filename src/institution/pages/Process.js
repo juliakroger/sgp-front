@@ -12,10 +12,7 @@ class Process extends Component {
                 Todos os processamentos
               </div>
               <div className="state-information col-xs-12 text-right no-pad" onClick={this.showModal}>
-                <Link to='/home/process/uploadimagesview'><p id="discursive_question"
-                                                             className="btn btn-success btn-sm m-r-12 pull-right mr-2">Enviar
-                  novas imagem</p></Link>
-
+                <Link to='/home/process/uploadimagesview'><p id="discursive_question" className="btn btn-success btn-sm m-r-12 pull-right mr-2">Enviar novas imagem</p></Link>
               </div>
             </h3>
           </div>

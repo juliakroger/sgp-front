@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import * as actions from '../store/actions/actionsTypes';
 import Amplify, {Auth} from 'aws-amplify';
 import './Login.css';
-
+import {message} from 'antd';
 
 Amplify.configure({
   API: {
@@ -19,14 +19,11 @@ Amplify.configure({
 
 class Login extends Component {
   loginHandler = (event) => {
-    console.log(this.props.username, this.props.password)
     Auth.signIn(this.props.username, this.props.password)
         .then(response => {
           this.props.history.push("/home");
-          console.log('200', response)
         })
-        .catch(error => console.log('400', error.message))
-
+        .catch(error => message.error(error.message))
   }
 
   onUsernameChange = (event) => {

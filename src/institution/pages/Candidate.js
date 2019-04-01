@@ -86,7 +86,7 @@ class Candidate extends Component {
                                         <button type="button" className="btn btn-primary btn-sm">Ações</button>
                                       </td>
                                     </tr>
-                                )
+                                );
                               }
                             },
                         ) : null

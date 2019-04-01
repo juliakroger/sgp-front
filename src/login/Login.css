@@ -1,8 +1,7 @@
 .LoginScreen {
     background: url("https://cdn.starlinetecnologia.com.br/images/login-background.jpg") no-repeat center;
     background-size: cover;
-    height: 2000px;
-    max-height: 799px;
+    height: 100vh;
 }
 
 header {
