@@ -180,7 +180,7 @@ class QuestionsBatchDiscursive extends Component {
                     <div className="card-header">Questão {question.order}</div>
                     <div className="card-body">
                       {
-                        (question.type == 't') ? <CKEditorQuestionDiscursive order={question.order}/>
+                        (question.type === 't') ? <CKEditorQuestionDiscursive order={question.order}/>
                             : <CKEditorQuestionObjective order={question.order}/>
 
                       }

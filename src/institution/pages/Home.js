@@ -66,10 +66,12 @@ class Home extends Component {
           <div className="row home-charts">
             <TotalQuestions data={data.graf_quant_questoes}/>
             <ProcessedQuestions data={data.questions}/>
-            <TestsTypes not_nominal={data.graf_tests_not_nominal_by_month} nominal={data.graf_tests_nominal_by_month}/>
-            <ProcessedTests data={data.graf_processed_tests}/>
             <QuestionsDifficulty data={data.graf_questions_difficulty}/>
             <TestsByMonth data={data.graf_tests_by_month}/>
+            <TestsTypes not_nominal={data.graf_tests_not_nominal_by_month} nominal={data.graf_tests_nominal_by_month}/>
+            <ProcessedTests data={data.graf_processed_tests}/>
+
+
 
 
           </div>

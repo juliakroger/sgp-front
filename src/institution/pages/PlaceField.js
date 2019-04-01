@@ -24,8 +24,8 @@ class PlaceField extends Component {
   }
 
   findChildren = (data) => {
-    data.map((children) => {
-      if (children.pk == this.props.atualLocal) {
+    data.forEach((children) => {
+      if (children.pk === this.props.atualLocal) {
         Object.assign(children, this.state.children)
       } else {
         if (children.hasOwnProperty('children')) {
@@ -43,7 +43,7 @@ class PlaceField extends Component {
 
   addChidren = () => {
     setTimeout(() => {
-      URL = 'https://sgp-homolog.provafacilnaweb.com.br/demo/api/v1/tm/rest/internal/placetree/' + this.props.atualLocal;
+      let URL = 'https://sgp-homolog.provafacilnaweb.com.br/demo/api/v1/tm/rest/internal/placetree/' + this.props.atualLocal;
       axios.get(URL)
           .then(res => {
             this.setState({children: res.data});

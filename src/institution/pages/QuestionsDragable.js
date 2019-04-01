@@ -39,9 +39,9 @@ class Question extends Component {
                       <Input addonBefore="Valor" defaultValue={this.props.question.value} size="small" style={{width: 100}}/>
                     </div>
                     <Dropdown overlay={menu}>
-                      <a className="ant-dropdown-link" href="#">
+                      <p className="ant-dropdown-link pointer" href="#">
                         <i className="fas fa-ellipsis-v"></i>
-                      </a>
+                      </p>
                     </Dropdown>
                   </div>
 

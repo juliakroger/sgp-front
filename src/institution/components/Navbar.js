@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
 import '../css/Style.css';
-
+import {Link} from 'react-router-dom';
 
 class Navebar extends Component {
   render() {
     return (
         <div className="navbar navbar-light bg-light">
           <div>
-            <i className="fas fa-outdent nav-link pointer"/>
-            <i className="fa fa-home nav-link pointer"/>
+            <Link to="/home"><i className="fa fa-home nav-link pointer" style={{color: 'rgba(0, 0, 0, 0.65)'}}/></Link>
             <i className="fa fa-tasks nav-link pointer"/>
             <i className="far fa-bell nav-link pointer"/>
           </div>

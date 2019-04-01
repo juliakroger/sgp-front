@@ -20,9 +20,9 @@ class QuestionsContentCascading extends Component {
     axios.get(URL)
         .then(res => {
           console.log(res);
-          res.data.items.map(item => {
+          res.data.items.forEach(item => {
             if (item.data.length > 0) {
-              this.state.data.map(dataItems => {
+              this.state.data.forEach(dataItems => {
                 if (dataItems.order >= item.order) {
                   dataItems.data = item.data;
                 }

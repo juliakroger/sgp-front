@@ -15,10 +15,10 @@ class TestQuestionsDragable extends Component {
       let columns = {};
       let questions = {};
       let columnOrder = [];
-      this.props.session.map(session => {
+      this.props.session.forEach(session => {
         const column = { [session.key]: { id: session.key, title: session.name, questionsIds: [] } }
         columnOrder.push(session.key)
-          session.assessmentitem_set.map(question => {
+          session.assessmentitem_set.forEach(question => {
             const {key, type, full_text} = question.item.itemcontent.command_set[0];
             column[session.key].questionsIds.push(key);
             const quest = { [key]: {id:key, value:question.value, type:type, content:full_text} }

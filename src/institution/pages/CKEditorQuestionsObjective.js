@@ -54,12 +54,11 @@ class CKEditorObjective extends Component {
 
   onChange = (e) => {
     this.setState({radioValue: e.target.value});
-    this.state.textAnswer.map((awnswer, i) => {
-      if (awnswer.order === e.target.value) {
-        this.state.textAnswer[i].correct = true;
-      } else {
-        this.state.textAnswer[i].correct = false;
-      }
+    this.state.textAnswer.forEach((awnswer, i) => {
+       (awnswer.order === e.target.value)
+           ? this.state.textAnswer[i].correct = true
+       : this.state.textAnswer[i].correct = false
+
     });
     this.props.UpdateAnswerField(this.state.textAnswer, this.state.order)
   };

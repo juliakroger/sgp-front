@@ -26,7 +26,8 @@ const reducer = (state = initialState, action) => {
         difficultyLevel: action.payload,
       }
     case actions.ADD_QUESTION_BODY:
-      state.questions[action.order - 1].body = action.body;
+        state.questions[action.order - 1].body = action.body;
+
 
     case actions.UPDATE_AWNSERS_FIELD:
       state.questions[action.order - 1].alternative_set = action.textAnswer;

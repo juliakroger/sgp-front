@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
-
+import {message} from 'antd';
 
 class QuestionsCreateButtons extends Component {
   cadastrarQuestao = () => {
@@ -31,8 +31,8 @@ class QuestionsCreateButtons extends Component {
     };
 
     axios.post('https://sgp-homolog.provafacilnaweb.com.br/demo/api/v1/ib/rest/item/create/', data)
-        .then(res => console.log(res))
-        .catch(error => console.log(error))
+        .then(res => message.success('Questão criada com sucesso'))
+        .catch(error => message.error('Não foi possível concluir o cadastro'))
   };
 
   render() {

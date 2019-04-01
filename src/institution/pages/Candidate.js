@@ -19,7 +19,6 @@ class Candidate extends Component {
       },
     })
         .then(response => {
-          console.log(response.data);
           this.setState({data: response.data})
         })
         .catch(error => console.log(error))
@@ -90,12 +89,12 @@ class Candidate extends Component {
                                 )
                               }
                             },
-                        ) : (<tr></tr>)
+                        ) : null
                   }
                   </tbody>
                 </table>
               </div>
-              {(this.state.data.length <= 0) ? <Spinner/> : <p></p>}
+              {(this.state.data.length <= 0) ? <Spinner/> : null}
             </div>
           </div>
 
